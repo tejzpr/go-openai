@@ -320,6 +320,9 @@ type ChatCompletionRequest struct {
 	ChatTemplateKwargs map[string]any `json:"chat_template_kwargs,omitempty"`
 	// Specifies the latency tier to use for processing the request.
 	ServiceTier ServiceTier `json:"service_tier,omitempty"`
+	// The ExtraBody field allows for the inclusion of arbitrary key-value pairs
+	// in the request body that may not be explicitly defined in this struct.
+	ExtraBody map[string]any `json:"extra_body,omitempty"`
 	// Embedded struct for non-OpenAI extensions
 	ChatCompletionRequestExtensions
 }
