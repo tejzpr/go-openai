@@ -191,10 +191,11 @@ func (m *ChatCompletionMessage) UnmarshalJSON(bs []byte) error {
 
 type ToolCall struct {
 	// Index is not nil only in chat completion chunk object
-	Index    *int         `json:"index,omitempty"`
-	ID       string       `json:"id,omitempty"`
-	Type     ToolType     `json:"type"`
-	Function FunctionCall `json:"function"`
+	Index        *int            `json:"index,omitempty"`
+	ID           string          `json:"id,omitempty"`
+	Type         ToolType        `json:"type"`
+	Function     FunctionCall    `json:"function"`
+	ExtraContent json.RawMessage `json:"extra_content,omitempty"`
 }
 
 type FunctionCall struct {
